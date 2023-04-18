@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Taller 2 Condicionales</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navegacion" >
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="condicionales.html">Taller 2</a></li>
+              <li><a href="ciclos.html">Taller 3</a></li>
+              <li><a href="arreglos.html">Taller 4</a></li>
+              <li><a href="funciones.html">Taller 5</a></li>
+              <li><a href="java.html">Taller 6</a></li>
+              <li><a href="CV.html">Hoja de Vida</a></li>
+            </ul>
+          </nav>
+    </header>
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18
+        años, deberá mostrar en pantalla: Usted es mayor de edad.</p>
+    <pre><code>Proceso punto1
+        Definir edad Como Entero;
+        // Solicitamos la edad de la persona
+        Escribir("Ingrese su edad: ");
+        Leer edad;
+        
+        // Verificamos si es mayor o igual a 18 años
+        Si edad >= 18 Entonces
+            Escribir("Usted es mayor de edad.");
+        FinSi
+    FinProceso
+    
+</code></pre>
+    <!-- //2 -->
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años,
+        deberá mostrar en pantalla: Usted aún es un niño(a).</p>
+    <pre><code>Proceso punto2
+        Definir edad Como Entero;
+        Escribir "Ingrese su edad: ";
+        Leer edad;
+        
+        Si edad < 18 Entonces
+            Escribir "Usted aún es un niño(a).";
+        FinSi
+    FinProceso
+    
+
+</code></pre>
+    <!-- 3 -->
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es
+        mayor o igual a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de edad, por lo
+        tanto puede entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces, deberá imprimirse el
+        siguiente mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por
+        favor devuélvase a su casa.</p>
+    <pre><code>Proceso punto3
+        Definir nombre Como Caracter;
+        Definir apellidos Como Caracter;
+        Definir edad como entero;
+            Escribir "Ingrese su nombre:";
+            Leer nombre;
+            Escribir "Ingrese sus apellidos:";
+            Leer apellidos;
+            Escribir "Ingrese su edad:";
+            Leer edad;
+            
+            Si edad >= 18 Entonces
+                Escribir nombre, " ", apellidos, " usted es mayor de edad, por lo tanto puede entrar a la fiesta.";
+            Sino
+                Escribir nombre, " ", apellidos, " usted es menor de edad, por lo tanto no puede entrar a la fiesta, por favor devuélvase a su casa.";
+            FinSi
+    FinProceso
+    
+
+
+</code></pre>
+    <!-- 4 -->
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el
+        Porvenir, requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus
+        usuarios. Para cada usuario se debe permitir la opción de alquilar película, consultar películas disponibles y
+        recibir película en la video tienda con la opción de realizar anotaciones sobre estas si se llegan a presentar
+        daños u otra novedad sobre la película.</p>
+    <pre><code>Proceso punto4
+	
+        Definir nombrePelicula,novedad Como Caracter;
+        Definir opcion,comentario Como Entero;
+            
+                Escribir "Bienvenido a la video tienda El Porvenir";
+                Escribir "1. Alquilar película";
+                Escribir "2. Consultar películas disponibles";
+                Escribir "3. Recibir película y realizar anotaciones";
+                Escribir "4. Salir";
+                
+                Leer opcion;
+                Segun opcion Hacer
+                    1:
+                        Escribir"nombre de la película: ";
+                        Leer nombrePelicula;
+                        
+                        Limpiar Pantalla;
+                        Escribir "Alquilando ",nombrePelicula,"...";
+                    2:
+                        Escribir "Las peliculas disponibles: ";
+                        Escribir "Peli N1";
+                        Escribir "Peli N2";
+                        Escribir "Peli N3";
+                        
+                    3:
+                        Escribir "¿Quieres realizar un comentario?";
+                        Escribir "1. Si";
+                        Escribir "2. No";
+                        Leer  comentario;
+                        
+                        Si comentario == 1 Entonces
+                            Escribir "Ingrese comentario";
+                            Leer novedad;
+                            Limpiar Pantalla;
+                            Escribir " La Novedad ha sido registrada de forma correcta";
+                        SiNo
+                            Escribir "Saliendo del sistema";
+                        FinSi
+                    De Otro Modo:
+                        Escribir "opción no válida";
+                FinSegun
+    FinProceso
+
+
+</code></pre>
+    <!-- 5 -->
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder
+        facturar los productos que vende a sus clientes y para ello, los productos tienen unas características que deben
+        indicársele al cliente para que pueda escoger el producto a comprar. Para cada cliente, se tienen las opciones
+        de compra de producto, consulta de precios por producto y devoluciones en caso de que se presenten</p>
+    <pre><code>Proceso punto5
+	
+        // Definición de variables
+        Definir cliente Como Caracter;
+        Definir producto Como entero;
+        Definir opcion Como Entero;
+        
+        
+        // Menú de opciones
+        
+        Escribir "Bienvenido(a) a Droguería Mi Salud";
+        Escribir "1. Comprar producto";
+        Escribir "2. Consultar precios por producto";
+        Escribir "3. Devoluciones";
+        Escribir "4. Salir";
+        Leer opcion;
+        
+        // Acciones según opción seleccionada
+        Segun opcion Hacer
+            1:
+                Escribir "Seleccione el producto que desea comprar:";
+                Escribir "1. Medicamento A";
+                Escribir "2. Medicamento B";
+                Escribir "3. Otro producto";
+                Leer producto;
+                
+                Si producto = 1 Entonces
+                    Escribir "Ha seleccionado Medicamento A";
+                SiNo Si producto = 2 Entonces
+                        Escribir "Ha seleccionado Medicamento B";
+                    SiNo
+                        Escribir "Ha seleccionado otro producto";
+                    FinSi
+                FinSi
+            2:
+                Escribir "Seleccione el producto del que desea conocer el precio:";
+                Escribir "1. Medicamento A";
+                Escribir "2. Medicamento B";
+                Escribir "3. Otro producto";
+                Leer producto;
+                Si producto = 1 Entonces
+                    Escribir "El precio de Medicamento A es de $50";
+                Sino 
+                    Si producto = 2 Entonces
+                        Escribir "El precio de Medicamento B es de $75";
+                        
+                    Sino si producto <> 1 y producto <> 2 Entonces
+                            Escribir "El precio del otro producto es de $100";
+                        FinSi
+                    FinSi
+                FinSi
+            3:
+                Escribir "Ingrese el producto que desea devolver:";
+                Escribir "1. Medicamento A";
+                Escribir "2. Medicamento B";
+                Escribir "3. Otro producto";
+                Leer producto;
+                Si producto = 1 Entonces
+                    Escribir "Se ha aceptado la devolución del Medicamento A.";
+                Sino Si producto = 2 Entonces
+                        Escribir "Se ha aceptado la devolución del Medicamento B ";
+                    Sino Si producto = 3 Entonces
+                            Escribir "Se ha aceptado la devolución del Medicamento";
+                        SiNo
+                            Escribir "No se pudo aceptar la devolución";
+                        FinSi
+                    FinSi
+                FinSi
+            4:
+                Escribir "Gracias por visitar Droguería Mi Salud";
+            De Otro Modo:
+                Escribir "Opción inválida, intente de nuevo";
+        FinSegun
+    FinProceso
+
+</code></pre>
+    <!-- 6 -->
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas
+        revisiones y requiere una aplicación que le permita registrar los servicios generados a sus clientes. Para cada
+        motocicleta se debe tener registro del ingreso al taller y las observaciones por parte del cliente. También debe
+        existir registro de salida del taller con las novedades y otra de arreglos hechos por el mecánico en caso de que
+        se requiera inventariar cambios repuestos en la motocicleta al entregarla.</p>
+    <pre><code>Proceso punto6
+		Definir matricula Como Caracter;
+		Definir cilindraje Como Entero;
+		Definir fecha_ingreso Como Caracter;
+		Definir observaciones_cliente Como Caracter;
+		Definir fecha_salida Como Caracter;
+		Definir novedades Como Caracter;
+		Definir arreglos Como Caracter;
+		novedades <- "";
+		arreglos <- "";
+		
+		Escribir "Ingrese la matrícula de la motocicleta:";
+		Leer matricula;
+		
+		Escribir "Ingrese el cilindraje de la motocicleta:";
+		Leer cilindraje;
+		
+		Escribir "Ingrese la fecha de ingreso de la motocicleta:";
+		Leer fecha_ingreso;
+		
+		Escribir "Ingrese las observaciones del cliente:";
+		Leer observaciones_cliente;
+		
+		// Revisión de la motocicleta
+		Si cilindraje > 500 Entonces
+			Escribir "La motocicleta de alta cilindrada necesita revisión adicional";
+			Escribir "Ingrese las novedades encontradas:";
+			Leer novedades;
+		FinSi
+		
+		Escribir "Ingrese la fecha de salida de la motocicleta:";
+		Leer fecha_salida;
+		
+		// Arreglos en la motocicleta
+		Si novedades <> "" Entonces
+			Escribir "Ingrese los arreglos hechos en la motocicleta:";
+			Leer arreglos;
+		FinSi
+		
+		// Mostrar información de la motocicleta y su revisión
+		Escribir "Motocicleta con matrícula " , matricula , " y cilindraje " , cilindraje;
+		Escribir "Fecha de ingreso: " ,fecha_ingreso;
+		Escribir "Observaciones del cliente: " , observaciones_cliente;
+		
+		Si novedades <> "" Entonces
+			Escribir "Novedades encontradas: " , novedades;
+		FinSi
+		
+		Escribir "Fecha de salida: " , fecha_salida;
+		
+		Si arreglos <> "" Entonces
+			Escribir "Arreglos hechos en la motocicleta: " , arreglos;
+		FinSi
+
+
+FinProceso
+
+
+</code></pre>
+    <!-- 7 -->
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de
+        masa corporal) y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada
+        adicional a los datos suministrados, debe mostrar el resultado para cada uno y establecer en qué rango se
+        encuentra (bajo peso, normal, sobrepeso y obeso).</p>
+    <pre><code>Proceso punto7
+        Definir opcion Como Entero;
+        Definir peso Como Entero;
+        Definir Estatura Como Real;
+        Definir rango Como Real;
+        
+        Escribir "Secretaría de Salud Municipal";
+        Escribir "-----------------------------";
+        
+        Escribir "¿Digita tu peso?";
+        Leer Peso;
+        
+        Escribir "¿Digita tu estatura?";
+        Leer Estatura;
+        rango <- Peso/(Estatura*2);
+        
+        Si rango < 18.5 Entonces
+            Escribir "el rango es de : ",rango,",usted esta en:";
+            Escribir "Bajo peso.";
+        SiNo
+            Si rango >= 18.5 & rango <= 24.9 Entonces
+                Escribir "el rango es de : ",rango,",usted esta en:";
+                Escribir "Peso normal.";
+            SiNo
+                Si rango >= 25 & rango <= 29.9 Entonces
+                    Escribir "el rango es de : ",rango,", usted esta en:";
+                    Escribir "Sobre peso.";
+                SiNo
+                    Si rango >= 30 & rango <= 34.9 Entonces
+                        Escribir "el rango es de : ",rango,", usted esta en:";
+                        Escribir "Obesidad grado I";
+                    SiNo
+                        Si rango >= 35 & rango <= 39.9 Entonces
+                            Escribir "el rango es de : ",rango,", usted esta en:";
+                            Escribir "Obesidad grado II";
+                        SiNo
+                            Si rango >= 40 Entonces
+                                Escribir "el rango es de : ",rango,", usted esta en:";
+                                Escribir "Obesidad grado III";
+                            FinSi
+                        FinSi
+                    FinSi
+                FinSi
+            FinSi
+            Escribir "";
+        FinSi
+    FinProceso
+    
+</code></pre>
+    <!-- 8 -->
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita
+        registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas características
+        propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación permita registrar los
+        pedidos, las tortas disponibles y las ventas que se registren diariamente.</p>
+    <pre><code>Proceso punto8
+		Definir tortaDisponible, sabor, cantidad, decoracion Como Cadena;
+		Definir ventasDiarias, cantidadVendida Como Entero;
+		Definir opcion Como Entero;
+		ventasDiarias <-0;
+		
+		Escribir "Bienvenido a la aplicación de registro de pedidos de Don Carlos, el mejor pastelero de la ciudad";
+		
+		
+			
+			Escribir "";
+			Escribir "Por favor, seleccione una opción:";
+			Escribir "1. Registrar pedido";
+			Escribir "2. Ver tortas disponibles";
+			Escribir "3. Ver ventas diarias";
+			Escribir "4. Salir";
+			Leer opcion;
+			
+			Si opcion = 1 Entonces
+				Escribir "";
+				Escribir "Ingrese el sabor de la torta (ejemplo: chocolate, vainilla, etc.):";
+				Leer sabor;
+				Escribir "Ingrese la cantidad de porciones:";
+				Leer cantidad;
+				Escribir "Ingrese la decoración (ejemplo: con flores, con frutas, etc.):";
+				Leer decoracion;
+				
+				Escribir "";
+				Escribir "Pedido registrado con éxito:";
+				Escribir "Sabor: " , sabor;
+				Escribir "Cantidad: " , cantidad;
+				Escribir "Decoración: " , decoracion;
+				
+				Sino Si opcion = 2 Entonces
+				Escribir "";
+				Escribir "Las tortas disponibles son:";
+				Escribir "1. Torta de chocolate";
+				Escribir "2. Torta de vainilla";
+				Escribir "3. Torta de fresa";
+				
+				Sino Si opcion = 3 Entonces
+				Escribir "";
+				Escribir "Las ventas diarias son:";
+				Escribir ventasDiarias;
+				
+				Sino Si opcion = 4 Entonces
+				Escribir "";
+				Escribir "¡Gracias por utilizar nuestra aplicación!";
+				
+				
+			Sino
+				Escribir "";
+				Escribir "Opción no válida. Por favor, seleccione una opción válida.";
+				
+			FinSI
+		FinSi
+	FinSi
+FinSi
+FinProceso
+
+
+</code></pre>
+    <!-- 9 -->
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de
+        diferentes figuras geométricas, para ello requiere una aplicación que le facilite el ejercicio solicitándole los
+        valores al estudiante. La aplicación debe permitir que el estudiante seleccione si desea calcular el área de un
+        rectángulo, triángulo o trapecio. No olvide solicitar los datos necesarios para realizar cada cálculo y mostrar
+        su respectivo resultado.</p>
+    <pre><code>Proceso punto9
+        Definir opcion Como Entero;
+        Definir base Como Real;
+        Definir altura Como Real;
+        Definir area Como Real;
+        Definir baseMayor Como Real;
+        Definir baseMenor Como Real;
+                Escribir "Seleccione la figura geométrica:";
+                Escribir "1. Rectángulo";
+                Escribir "2. Triángulo";
+                Escribir "3. Trapecio";
+                Leer opcion;
+                
+                Si opcion = 1 entonces
+                    Escribir "Ingrese la base del rectángulo:";
+                    Leer base;
+                    Escribir "Ingrese la altura del rectángulo:";
+                    Leer altura;
+                    area <- base * altura;
+                    Escribir "El área del rectángulo es:", area;
+                Sino si opcion = 2 entonces
+                        Escribir "Ingrese la base del triángulo:";
+                        Leer base;
+                        Escribir "Ingrese la altura del triángulo:";
+                        Leer altura;
+                        area <- (base * altura) / 2;
+                        Escribir "El área del triángulo es:", area;
+                    Sino si opcion = 3 entonces
+                            Escribir "Ingrese la base mayor del trapecio:";
+                            Leer baseMayor;
+                            Escribir "Ingrese la base menor del trapecio:";
+                            Leer baseMenor;
+                            Escribir "Ingrese la altura del trapecio:";
+                            Leer altura;
+                            area <- ((baseMayor + baseMenor) * altura) / 2;
+                            Escribir "El área del trapecio es:", area;
+                        Sino
+                            Escribir "Opción inválida";
+                        FinSi
+                    FinSi
+                FinSi
+    
+    FinProceso
+    
+
+</code></pre>
+    <!-- 10 -->
+    <h1>Taller 2 Condicionales</h1>
+    <h2>Código de PSeInt</h2>
+    <p>Enunciado:El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación
+        para llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y
+        cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los
+        ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser mayor al valor que
+        tiene en la cuenta.</p>
+    <pre><code>Proceso punto10
+
+		Definir titular como Caracter;
+		Definir cantidad, ingreso, retiro como Real;
+		Definir opcion Como Entero;
+		
+		Escribir "Bienvenido a Su banco fiel";
+		Escribir "Ingrese su nombre: ";
+		Leer titular;
+		Escribir "Ingrese la cantidad inicial: ";
+		Leer cantidad;
+		
+			Escribir "";
+			Escribir "Titular: ", titular;
+			Escribir "Cantidad: $", cantidad;
+			Escribir "1 - Ingreso de dinero";
+			Escribir "2 - Retiro de dinero";
+			Escribir "3 - Consulta de saldo";
+			Escribir "0 - Salir";
+			Escribir "Seleccione una opción: ";
+			Leer opcion;
+			
+			Segun opcion Hacer
+				1:
+					Escribir "Ingrese la cantidad a ingresar: ";
+					Leer ingreso;
+					Si ingreso > 0 Entonces
+						cantidad <- cantidad + ingreso;
+						Escribir "Ingreso realizado correctamente";
+					SiNo
+						Escribir "Error: no se pueden ingresar valores negativos";
+					FinSi
+				2:
+					Escribir "Ingrese la cantidad a retirar: ";
+					Leer retiro;
+					Si retiro <= cantidad Entonces
+						cantidad <- cantidad - retiro;
+						Escribir "Retiro realizado correctamente";
+					SiNo
+						Escribir "Error: fondos insuficientes";
+					FinSi
+				3:
+					Escribir "Saldo actual: $", cantidad;
+				0:
+					Escribir "Adiós";
+				De Otro Modo:
+					Escribir "Opción inválida";
+			FinSegun
+FinProceso
+
+</code></pre>
+    <h2>Video de YouTube</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KDjh7i47sFI" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GYpFyoeUENk" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-nSgtXULRI8" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+</body>
+
+</html>

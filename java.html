@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Taller 1 Variables e Impresiones</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            background-color: white;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navegacion" >
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="condicionales.html">Taller 2</a></li>
+              <li><a href="ciclos.html">Taller 3</a></li>
+              <li><a href="arreglos.html">Taller 4</a></li>
+              <li><a href="funciones.html">Taller 5</a></li>
+              <li><a href="java.html">Taller 6</a></li>
+              <li><a href="CV.html">Hoja de Vida</a></li>
+            </ul>
+          </nav>
+    </header>
+    <h1>1.Realizar el taller #1 de PSeInt en Java</h1>
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Realizar un programa el cual solicite su nombre y apellidos</p>
+    <pre><code>package javat1p1;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat1p1 {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Ingresa tu nombre: ");
+                String nombre = scanner.nextLine();
+                System.out.print("Ingresa tus apellidos: ");
+                String apellidos = scanner.nextLine();
+                
+                Persona persona = new Persona(nombre, apellidos);
+                System.out.println("¡Hola " + persona.getNombreCompleto() + "! Bienvenido(a).");
+            }
+        }
+        
+        class Persona {
+            private String nombre;
+            private String apellidos;
+            
+            public Persona(String nombre, String apellidos) {
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+            }
+            
+            public String getNombreCompleto() {
+                return nombre + " " + apellidos;
+            }
+        }
+        
+    
+</code></pre>
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Realizar un programa el cual solicite su nombre, apellidos, edad y estatura.</p>
+    <pre><code>package javat1p2;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat1p2 {
+            private String nombre;
+            private String apellidos;
+            private int edad;
+            private double estatura;
+        
+            public Javat1p2() {
+                Scanner sc = new Scanner(System.in);
+                System.out.print("Ingrese su nombre: ");
+                this.nombre = sc.nextLine();
+                System.out.print("Ingrese sus apellidos: ");
+                this.apellidos = sc.nextLine();
+                System.out.print("Ingrese su edad: ");
+                this.edad = sc.nextInt();
+                System.out.print("Ingrese su estatura en metros: ");
+                this.estatura = sc.nextDouble();
+                sc.close();
+            }
+        
+            public void mostrarDatos() {
+                System.out.println("Nombre: " + this.nombre);
+                System.out.println("Apellidos: " + this.apellidos);
+                System.out.println("Edad: " + this.edad);
+                System.out.println("Estatura: " + this.estatura);
+            }
+        
+            public static void main(String[] args) {
+                Javat1p2 persona = new Javat1p2();
+                persona.mostrarDatos();
+            }
+        }
+        
+	
+
+
+</code></pre>
+ 
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Realizar un programa el cual solicite su nombre y apellidos, también debe capturar nombre y apellidos
+        de su padre y madre. Al finalizar debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo], soy hijo
+        de [Nombre de la Madre] y [Nombre del Padre].</p>
+    <pre><code>package javat1p3;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat1p3 {
+            private String nombre;
+            private String apellidoPaterno;
+            private String apellidoMaterno;
+        
+            public Javat1p3(String nombre, String apellidoPaterno, String apellidoMaterno) {
+                this.nombre = nombre;
+                this.apellidoPaterno = apellidoPaterno;
+                this.apellidoMaterno = apellidoMaterno;
+            }
+        
+            public String getNombreCompleto() {
+                return this.nombre + " " + this.apellidoPaterno + " " + this.apellidoMaterno;
+            }
+        
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+        
+                System.out.print("Ingrese su nombre: ");
+                String nombre = scanner.nextLine();
+        
+                System.out.print("Ingrese su apellido paterno: ");
+                String apellidoPaterno = scanner.nextLine();
+        
+                System.out.print("Ingrese su apellido materno: ");
+                String apellidoMaterno = scanner.nextLine();
+        
+                Javat1p3 persona = new Javat1p3(nombre, apellidoPaterno, apellidoMaterno);
+        
+                System.out.print("Ingrese el nombre de su padre: ");
+                String nombrePadre = scanner.nextLine();
+        
+                System.out.print("Ingrese el apellido paterno de su padre: ");
+                String apellidoPaternoPadre = scanner.nextLine();
+        
+                System.out.print("Ingrese el apellido materno de su padre: ");
+                String apellidoMaternoPadre = scanner.nextLine();
+        
+                Javat1p3 padre = new Javat1p3(nombrePadre, apellidoPaternoPadre, apellidoMaternoPadre);
+        
+                System.out.print("Ingrese el nombre de su madre: ");
+                String nombreMadre = scanner.nextLine();
+        
+                System.out.print("Ingrese el apellido paterno de su madre: ");
+                String apellidoPaternoMadre = scanner.nextLine();
+        
+                System.out.print("Ingrese el apellido materno de su madre: ");
+                String apellidoMaternoMadre = scanner.nextLine();
+        
+                Javat1p3 madre = new Javat1p3(nombreMadre, apellidoPaternoMadre, apellidoMaternoMadre);
+        
+                System.out.println("Yo " + persona.getNombreCompleto() + ", soy hijo de " + madre.getNombreCompleto() + " y " + padre.getNombreCompleto());
+            }
+        }
+        
+	
+
+
+</code></pre>
+    
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Realizar un programa el cual solicite el nombre de una ciudad capital y el país. Al finalizar debe
+        imprimir en pantalla el siguiente mensaje "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del
+        País]</p>
+    <pre><code>package javat1p4;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat1p4 {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+        
+                System.out.print("Ingresa el nombre de la ciudad capital: ");
+                String nombreCiudad = scanner.nextLine();
+        
+                System.out.print("Ingresa el nombre del país: ");
+                String nombrePais = scanner.nextLine();
+        
+                Ciudad ciudad = new Ciudad(nombreCiudad, nombrePais);
+                ciudad.imprimirInformacion();
+            }
+        }
+        
+        class Ciudad {
+            private String nombreCiudad;
+            private String nombrePais;
+        
+            public Ciudad(String nombreCiudad, String nombrePais) {
+                this.nombreCiudad = nombreCiudad;
+                this.nombrePais = nombrePais;
+            }
+        
+            public void imprimirInformacion() {
+                System.out.printf("La ciudad %s, es la capital del país %s\n", nombreCiudad, nombrePais);
+            }
+        }
+        
+	
+
+</code></pre>
+    
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Realizar un programa el cual solicite el nombre de su mascota, edad de la mascota, el tipo de mascota y
+        su nombre completo. Al finalizar el sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de
+        Mascota] es un(a) [Tipo de Mascota], el cual, tiene [Edad de la Mascota] años de edad y [Nombre Completo] es
+        actualmente su dueño(a).</p>
+    <pre><code>package javat1p5;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat1p5 {
+            private String nombre;
+            private int edad;
+            private String tipo;
+            private String nombreCompleto;
+        
+            public Javat1p5(String nombre, int edad, String tipo, String nombreCompleto) {
+                this.nombre = nombre;
+                this.edad = edad;
+                this.tipo = tipo;
+                this.nombreCompleto = nombreCompleto;
+            }
+        
+            public String getNombre() {
+                return nombre;
+            }
+        
+            public int getEdad() {
+                return edad;
+            }
+        
+            public String getTipo() {
+                return tipo;
+            }
+        
+            public String getNombreCompleto() {
+                return nombreCompleto;
+            }
+        
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                
+                System.out.print("Ingrese el nombre de su mascota: ");
+                String nombreMascota = scanner.nextLine();
+                
+                System.out.print("Ingrese la edad de su mascota: ");
+                int edadMascota = scanner.nextInt();
+                scanner.nextLine(); // limpiar buffer
+                
+                System.out.print("Ingrese el tipo (animal) de su mascota: ");
+                String tipoMascota = scanner.nextLine();
+                
+                System.out.print("Ingrese su nombre completo: ");
+                String nombreCompleto = scanner.nextLine();
+        
+                Javat1p5 mascota = new Javat1p5(nombreMascota, edadMascota, tipoMascota, nombreCompleto);
+                
+                System.out.println(mascota.getNombre() + " es un(a) " + mascota.getTipo() + ", tiene " +
+                    mascota.getEdad() + " años de edad y " + mascota.getNombreCompleto() + " es su dueño(a).");
+            }
+        }
+        <!-- t2 -->
+        <h1>2.Realizar el taller #2 de PSeInt en Java</h1>
+		<h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18
+        años, deberá mostrar en pantalla: Usted es mayor de edad.</p>
+    <pre><code>package javat2p1;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat2p1 {
+          public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+        
+            System.out.print("Por favor, ingrese su edad: ");
+            int edad = sc.nextInt();
+        
+            if (edad >= 18) {
+              System.out.println("Usted es mayor de edad.");
+            }
+        
+            sc.close();
+          }
+        }
+        
+    
+</code></pre>
+    <!-- //2 -->
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años,
+        deberá mostrar en pantalla: Usted aún es un niño(a).</p>
+    <pre><code>package javat2p2;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat2p2 {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Ingrese su edad: ");
+                int edad = scanner.nextInt();
+                
+                if (edad < 18) {
+                    System.out.println("Usted aún es un niño o niña.");
+                } else {
+                    System.out.println("Usted ya es mayor de edad.");
+                }
+            }
+        }
+        
+        
+    
+
+</code></pre>
+    <!-- 3 -->
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es
+        mayor o igual a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de edad, por lo
+        tanto puede entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces, deberá imprimirse el
+        siguiente mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por
+        favor devuélvase a su casa.</p>
+    <pre><code>package javat2p3;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat2p3 {
+            private String nombre;
+            private String apellidos;
+            private int edad;
+        
+            public Javat2p3(String nombre, String apellidos, int edad) {
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                this.edad = edad;
+            }
+        
+            public String getNombreCompleto() {
+                return this.nombre + " " + this.apellidos;
+            }
+        
+            public int getEdad() {
+                return this.edad;
+            }
+        
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Ingrese su nombre: ");
+                String nombre = scanner.nextLine();
+                System.out.print("Ingrese sus apellidos: ");
+                String apellidos = scanner.nextLine();
+                System.out.print("Ingrese la edad: ");
+                int edad = scanner.nextInt();
+        
+                Javat2p3 persona = new Javat2p3(nombre, apellidos, edad);
+        
+                if (persona.getEdad() >= 18) {
+                    System.out.println(persona.getNombreCompleto() + " usted es mayor de edad, por lo tanto puede entrar a la fiesta.");
+                } else {
+                    System.out.println(persona.getNombreCompleto() + " usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.");
+                }
+            }
+        }
+        
+        
+    
+
+
+</code></pre>
+    <!-- 4 -->
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el
+        Porvenir, requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus
+        usuarios. Para cada usuario se debe permitir la opción de alquilar película, consultar películas disponibles y
+        recibir película en la video tienda con la opción de realizar anotaciones sobre estas si se llegan a presentar
+        daños u otra novedad sobre la película.</p>
+    <pre><code>package javat2p4;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.ArrayList;
+        import java.util.Scanner;
+        
+        class Pelicula {
+            private String nombre;
+        
+            public Pelicula(String nombre) {
+                this.nombre = nombre;
+            }
+        
+            public String getNombre() {
+                return nombre;
+            }
+        }
+        
+        class VideoTienda {
+            private ArrayList<Pelicula> peliculasDisponibles;
+            private Scanner input;
+        
+            public VideoTienda() {
+                peliculasDisponibles = new ArrayList<Pelicula>();
+                input = new Scanner(System.in);
+            }
+        
+            public void agregarPelicula(Pelicula pelicula) {
+                peliculasDisponibles.add(pelicula);
+            }
+        
+            public void alquilarPelicula() {
+                System.out.print("nombre de la película: ");
+                String nombrePelicula = input.next();
+                System.out.println("Alquilando " + nombrePelicula + "...");
+            }
+        
+            public void consultarPeliculasDisponibles() {
+                System.out.println("Las peliculas disponibles: ");
+                for (Pelicula pelicula : peliculasDisponibles) {
+                    System.out.println(pelicula.getNombre());
+                }
+            }
+        
+            public void recibirPeliculaYRealizarAnotaciones() {
+                System.out.println("¿Quieres realizar un comentario?");
+                System.out.println("1. Si");
+                System.out.println("2. No");
+                int comentario = input.nextInt();
+        
+                if (comentario == 1) {
+                    System.out.print("Ingrese comentario: ");
+                    String novedad = input.next();
+                    System.out.println("La Novedad ha sido registrada de forma correcta");
+                } else {
+                    System.out.println("Saliendo del sistema");
+                }
+            }
+        }
+        
+        public class Javat2p4 {
+        
+            public static void main(String[] args) {
+                VideoTienda tienda = new VideoTienda();
+                tienda.agregarPelicula(new Pelicula("Peli N1"));
+                tienda.agregarPelicula(new Pelicula("Peli N2"));
+                tienda.agregarPelicula(new Pelicula("Peli N3"));
+        
+                Scanner input = new Scanner(System.in);
+                
+                System.out.println("Bienvenido a la video tienda El Porvenir");
+                
+                while (true) {
+                    System.out.println("1. Alquilar película");
+                    System.out.println("2. Consultar películas disponibles");
+                    System.out.println("3. Recibir película y realizar anotaciones");
+                    System.out.println("4. Salir");
+                    
+                    int opcion = input.nextInt();
+                    if (opcion == 4) {
+                        break;
+                    }
+                    
+                    switch(opcion) {
+                        case 1:
+                            tienda.alquilarPelicula();
+                            break;
+                        case 2:
+                            tienda.consultarPeliculasDisponibles();
+                            break;
+                        case 3:
+                            tienda.recibirPeliculaYRealizarAnotaciones();
+                            break;
+                        default:
+                            System.out.println("opción no válida");
+                            break;
+                    }
+                }
+            }
+        }
+	
+        
+
+
+</code></pre>
+    <!-- 5 -->
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder
+        facturar los productos que vende a sus clientes y para ello, los productos tienen unas características que deben
+        indicársele al cliente para que pueda escoger el producto a comprar. Para cada cliente, se tienen las opciones
+        de compra de producto, consulta de precios por producto y devoluciones en caso de que se presenten</p>
+    <pre><code>package javat2p5;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.ArrayList;
+        import java.util.HashMap;
+        import java.util.Map;
+        import java.util.Scanner;
+        
+        public class Javat2p5 {
+            // Lista de productos de la droguería
+            private ArrayList<Producto> productos;
+        
+            public Javat2p5() {
+                productos = new ArrayList<>();
+            }
+        
+            // Agrega un producto a la lista de productos de la droguería
+            public void agregarProducto(Producto p) {
+                productos.add(p);
+            }
+        
+            // Imprime la lista de productos de la droguería con sus características
+            public void imprimirProductos() {
+                for (Producto p : productos) {
+                    System.out.println(p.toString());
+                }
+            }
+        
+            // Busca un producto por su nombre y devuelve su precio
+            public double buscarPrecio(String nombre) {
+                for (Producto p : productos) {
+                    if (p.getNombre().equals(nombre)) {
+                        return p.getPrecio();
+                    }
+                }
+                return -1; // Retorna -1 si el producto no se encuentra
+            }
+        
+            // Realiza una devolución de un producto dado su nombre y cantidad
+            public boolean devolverProducto(String nombre, int cantidad) {
+                for (Producto p : productos) {
+                    if (p.getNombre().equals(nombre)) {
+                        p.setCantidad(p.getCantidad() + cantidad); // Aumenta la cantidad del producto devuelto
+                        return true;
+                    }
+                }
+                return false; // Retorna false si el producto no se encuentra
+            }
+        
+            public static void main(String[] args) {
+                Javat2p5 drogueria = new Javat2p5();
+        
+                // Agrega algunos productos a la droguería
+                drogueria.agregarProducto(new Producto("Aspirina", 500, "Tabletas", 100));
+                drogueria.agregarProducto(new Producto("Paracetamol", 300, "Tabletas", 50));
+                drogueria.agregarProducto(new Producto("Vitaminas", 1000, "Cápsulas", 20));
+        
+                Scanner scanner = new Scanner(System.in);
+        
+                while (true) {
+                    // Menú principal de opciones
+                    System.out.println("Seleccione una opción:");
+                    System.out.println("1. Ver productos");
+                    System.out.println("2. Consultar precio de un producto");
+                    System.out.println("3. Realizar devolución");
+                    System.out.println("4. Salir");
+                    int opcion = scanner.nextInt();
+        
+                    switch (opcion) {
+                        case 1:
+                            drogueria.imprimirProductos();
+                            break;
+                        case 2:
+                            System.out.println("Ingrese el nombre del producto:");
+                            String nombre = scanner.next();
+                            double precio = drogueria.buscarPrecio(nombre);
+                            if (precio == -1) {
+                                System.out.println("Producto no encontrado");
+                            } else {
+                                System.out.println("El precio de " + nombre + " es: $" + precio);
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Ingrese el nombre del producto:");
+                            nombre = scanner.next();
+                            System.out.println("Ingrese la cantidad a devolver:");
+                            int cantidad = scanner.nextInt();
+                            boolean devolucionExitosa = drogueria.devolverProducto(nombre, cantidad);
+                            if (devolucionExitosa) {
+                                System.out.println(cantidad + " unidades de " + nombre + " han sido devueltas correctamente");
+                            } else {
+                                System.out.println("Producto no encontrado");
+                            }
+                            break;
+                                        case 4:
+                            System.out.println("Gracias por usar la aplicación de Droguería Mi Salud");
+                            return;
+                        default:
+                            System.out.println("Opción no válida");
+                            break;
+                    }
+                }
+            }
+        }
+        
+        class Producto {
+            private String nombre;
+            private double precio;
+            private String presentacion;
+            private int cantidad;
+        
+            public Producto(String nombre, double precio, String presentacion, int cantidad) {
+                this.nombre = nombre;
+                this.precio = precio;
+                this.presentacion = presentacion;
+                this.cantidad = cantidad;
+            }
+        
+            public String getNombre() {
+                return nombre;
+            }
+        
+            public double getPrecio() {
+                return precio;
+            }
+        
+            public String getPresentacion() {
+                return presentacion;
+            }
+        
+            public int getCantidad() {
+                return cantidad;
+            }
+        
+            public void setCantidad(int cantidad) {
+                this.cantidad = cantidad;
+            }
+        
+            // Sobreescribe el método toString para mostrar las características del producto
+            @Override
+            public String toString() {
+                return "Producto: " + nombre + "\nPrecio: $" + precio + "\nPresentación: " + presentacion + "\nCantidad disponible: " + cantidad + "\n";
+            }
+        }
+        
+                           
+        
+	
+
+</code></pre>
+    <!-- 6 -->
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas
+        revisiones y requiere una aplicación que le permita registrar los servicios generados a sus clientes. Para cada
+        motocicleta se debe tener registro del ingreso al taller y las observaciones por parte del cliente. También debe
+        existir registro de salida del taller con las novedades y otra de arreglos hechos por el mecánico en caso de que
+        se requiera inventariar cambios repuestos en la motocicleta al entregarla.</p>
+    <pre><code>package javt2p6c;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javt2p6c {
+            private String matricula;
+            private int cilindraje;
+            private String fechaIngreso;
+            private String observacionesCliente;
+            private String fechaSalida;
+            private String novedades = "";
+            private String arreglos = "";
+        
+            public Javt2p6c(String matricula, int cilindraje, String fechaIngreso, String observacionesCliente, String fechaSalida) {
+                this.matricula = matricula;
+                this.cilindraje = cilindraje;
+                this.fechaIngreso = fechaIngreso;
+                this.observacionesCliente = observacionesCliente;
+                this.fechaSalida = fechaSalida;
+            }
+        
+            public void revisarMotocicleta() {
+                Scanner scanner = new Scanner(System.in);
+                if (cilindraje > 500) {
+                    System.out.println("La motocicleta de alta cilindrada necesita revisión adicional");
+                    System.out.println("Ingrese las novedades encontradas:");
+                    novedades = scanner.nextLine();
+                }
+            }
+        
+            public void hacerArreglos() {
+                Scanner scanner = new Scanner(System.in);
+                if (!novedades.equals("")) {
+                    System.out.println("Ingrese los arreglos hechos en la motocicleta:");
+                    arreglos = scanner.nextLine();
+                }
+            }
+        
+            public void mostrarInformacion() {
+                System.out.println("Motocicleta con matrícula " + matricula + " y cilindraje " + cilindraje);
+                System.out.println("Fecha de ingreso: " + fechaIngreso);
+                System.out.println("Observaciones del cliente: " + observacionesCliente);
+                if (!novedades.equals("")) {
+                    System.out.println("Novedades encontradas: " + novedades);
+                }
+                System.out.println("Fecha de salida: " + fechaSalida);
+                if (!arreglos.equals("")) {
+                    System.out.println("Arreglos hechos en la motocicleta: " + arreglos);
+                }
+            }
+        
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Ingrese la matrícula de la motocicleta:");
+                String matricula = scanner.nextLine();
+        
+                System.out.println("Ingrese el cilindraje de la motocicleta:");
+                int cilindraje = scanner.nextInt();
+                scanner.nextLine();
+        
+                System.out.println("Ingrese la fecha de ingreso de la motocicleta:");
+                String fechaIngreso = scanner.nextLine();
+        
+                System.out.println("Ingrese las observaciones del cliente:");
+                String observacionesCliente = scanner.nextLine();
+        
+                System.out.println("Ingrese la fecha de salida de la motocicleta:");
+                String fechaSalida = scanner.nextLine();
+        
+                Javt2p6c moto = new Javt2p6c(matricula, cilindraje, fechaIngreso, observacionesCliente, fechaSalida);
+                moto.revisarMotocicleta();
+                moto.hacerArreglos();
+                moto.mostrarInformacion();
+            }
+        }
+        
+		
+
+
+</code></pre>
+    <!-- 7 -->
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de
+        masa corporal) y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada
+        adicional a los datos suministrados, debe mostrar el resultado para cada uno y establecer en qué rango se
+        encuentra (bajo peso, normal, sobrepeso y obeso).</p>
+    <pre><code>package javat2p7;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat2p7 {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+        
+                System.out.print("Introduce tu peso en kilogramos: ");
+                double peso = scanner.nextDouble();
+        
+                System.out.print("Introduce tu estatura en metros: ");
+                double estatura = scanner.nextDouble();
+        
+                IMC imc = new IMC(peso, estatura);
+                double resultadoIMC = imc.calcularIMC();
+                String rango = imc.determinarRango();
+        
+                System.out.println("Tu IMC es: " + resultadoIMC);
+                System.out.println("Te encuentras en el rango de: " + rango);
+            }
+        }
+        
+        class IMC {
+            private double peso;
+            private double estatura;
+        
+            public IMC(double peso, double estatura) {
+                this.peso = peso;
+                this.estatura = estatura;
+            }
+        
+            public double calcularIMC() {
+                return peso / (estatura * estatura);
+            }
+        
+            public String determinarRango() {
+                double imc = calcularIMC();
+                if (imc < 18.5) {
+                    return "Bajo peso";
+                } else if (imc >= 18.5 && imc < 25) {
+                    return "Normal";
+                } else if (imc >= 25 && imc < 30) {
+                    return "Sobrepeso";
+                } else {
+                    return "Obeso";
+                }
+            }
+        }
+        
+    
+</code></pre>
+    <!-- 8 -->
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita
+        registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas características
+        propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación permita registrar los
+        pedidos, las tortas disponibles y las ventas que se registren diariamente.</p>
+    <pre><code>package javat2p8;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.ArrayList;
+        import java.util.Scanner;
+        
+        public class Javat2p8 {
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                String tortaDisponible, sabor, cantidad, decoracion;
+                int ventasDiarias = 0, cantidadVendida, opcion = 0;
+        
+                System.out.println("Bienvenido a la aplicación de registro de pedidos de Don Carlos, el mejor pastelero de la ciudad");
+                int cantidadTotalVendida=0;
+                while (opcion != 4) {
+                    System.out.println();
+                    System.out.println("Por favor, seleccione una opción:");
+                    System.out.println("1. Registrar pedido");
+                    System.out.println("2. Ver tortas disponibles");
+                    System.out.println("3. Ver ventas diarias");
+                    System.out.println("4. Salir");
+                    opcion = sc.nextInt();
+        
+                    if (opcion == 1) {
+                        System.out.println();
+                        System.out.println("Ingrese el sabor de la torta (ejemplo: chocolate, vainilla, etc.):");
+                        sabor = sc.next();
+                        System.out.println("Ingrese la cantidad de porciones:");
+                        cantidad = sc.next();
+                        System.out.println("Ingrese la decoración (ejemplo: con flores, con frutas, etc.):");
+                        decoracion = sc.next();
+                        cantidadTotalVendida=cantidadTotalVendida+1;
+                        System.out.println();
+                        System.out.println("Pedido registrado con éxito:");
+                        System.out.println("Sabor: " + sabor);
+                        System.out.println("Cantidad: " + cantidad);
+                        System.out.println("Decoración: " + decoracion);
+        
+                    } else if (opcion == 2) {
+                        System.out.println();
+                        System.out.println("Las tortas disponibles son:");
+                        System.out.println("1. Torta de chocolate");
+                        System.out.println("2. Torta de vainilla");
+                        System.out.println("3. Torta de fresa");
+        
+                    } else if (opcion == 3) {
+                        System.out.println();
+                        System.out.println("Las ventas diarias son:");
+                        System.out.println(cantidadTotalVendida);
+        
+                    } else if (opcion == 4) {
+                        System.out.println();
+                        System.out.println("¡Gracias por utilizar nuestra aplicación!");
+        
+                    } else {
+                        System.out.println();
+                        System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
+                    }
+                }
+            }
+        }
+        
+		
+
+
+</code></pre>
+    <!-- 9 -->
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de
+        diferentes figuras geométricas, para ello requiere una aplicación que le facilite el ejercicio solicitándole los
+        valores al estudiante. La aplicación debe permitir que el estudiante seleccione si desea calcular el área de un
+        rectángulo, triángulo o trapecio. No olvide solicitar los datos necesarios para realizar cada cálculo y mostrar
+        su respectivo resultado.</p>
+    <pre><code>package javat2p9;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat2p9 {
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                Figura figura;
+        
+                System.out.println("Seleccione la figura geométrica:");
+                System.out.println("1. Rectángulo");
+                System.out.println("2. Triángulo");
+                System.out.println("3. Trapecio");
+        
+                int opcion = sc.nextInt();
+        
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Ingrese la base del rectángulo:");
+                        double base = sc.nextDouble();
+                        System.out.println("Ingrese la altura del rectángulo:");
+                        double altura = sc.nextDouble();
+                        figura = new Rectangulo(base, altura);
+                        break;
+                    case 2:
+                        System.out.println("Ingrese la base del triángulo:");
+                        base = sc.nextDouble();
+                        System.out.println("Ingrese la altura del triángulo:");
+                        altura = sc.nextDouble();
+                        figura = new Triangulo(base, altura);
+                        break;
+                    case 3:
+                        System.out.println("Ingrese la base mayor del trapecio:");
+                        double baseMayor = sc.nextDouble();
+                        System.out.println("Ingrese la base menor del trapecio:");
+                        double baseMenor = sc.nextDouble();
+                        System.out.println("Ingrese la altura del trapecio:");
+                        altura = sc.nextDouble();
+                        figura = new Trapecio(baseMayor, baseMenor, altura);
+                        break;
+                    default:
+                        System.out.println("Opción inválida");
+                        return;
+                }
+        
+                System.out.println("El área de la figura seleccionada es: " + figura.calcularArea());
+            }
+        }
+        
+        abstract class Figura {
+            public abstract double calcularArea();
+        }
+        
+        class Rectangulo extends Figura {
+            private double base;
+            private double altura;
+        
+            public Rectangulo(double base, double altura) {
+                this.base = base;
+                this.altura = altura;
+            }
+        
+            public double calcularArea() {
+                return base * altura;
+            }
+        }
+        
+        class Triangulo extends Figura {
+            private double base;
+            private double altura;
+        
+            public Triangulo(double base, double altura) {
+                this.base = base;
+                this.altura = altura;
+            }
+        
+            public double calcularArea() {
+                return (base * altura) / 2;
+            }
+        }
+        
+        class Trapecio extends Figura {
+            private double baseMayor;
+            private double baseMenor;
+            private double altura;
+        
+            public Trapecio(double baseMayor, double baseMenor, double altura) {
+                this.baseMayor = baseMayor;
+                this.baseMenor = baseMenor;
+                this.altura = altura;
+            }
+        
+            public double calcularArea() {
+                return ((baseMayor + baseMenor) * altura) / 2;
+            }
+        }
+        
+        
+    
+
+</code></pre>
+    <!-- 10 -->
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación
+        para llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y
+        cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los
+        ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser mayor al valor que
+        tiene en la cuenta.</p>
+    <pre><code>package javat2p10;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat2p10 {
+            private String titular;
+            private double saldo;
+        
+            public Javat2p10(String titular, double saldo) {
+                this.titular = titular;
+                this.saldo = saldo;
+            }
+        
+            public void depositar(double cantidad) {
+                if (cantidad > 0) {
+                    saldo += cantidad;
+                    System.out.println("Ingreso realizado correctamente");
+                } else {
+                    System.out.println("Error: no se pueden ingresar valores negativos");
+                }
+            }
+        
+            public void retirar(double cantidad) {
+                if (cantidad <= saldo) {
+                    saldo -= cantidad;
+                    System.out.println("Retiro realizado correctamente");
+                } else {
+                    System.out.println("Error: fondos insuficientes");
+                }
+            }
+        
+            public void consultarSaldo() {
+                System.out.println("Saldo actual: $" + saldo);
+            }
+        
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+        
+                System.out.println("Bienvenido a Su banco fiel");
+                System.out.print("Ingrese su nombre: ");
+                String titular = sc.nextLine();
+                System.out.print("Ingrese la cantidad inicial: ");
+                double saldo = sc.nextDouble();
+                Javat2p10 cuenta = new Javat2p10(titular, saldo);
+        
+                int opcion;
+                do {
+                    System.out.println();
+                    System.out.println("Titular: " + cuenta.titular);
+                    System.out.println("Cantidad: $" + cuenta.saldo);
+                    System.out.println("1 - Ingreso de dinero");
+                    System.out.println("2 - Retiro de dinero");
+                    System.out.println("3 - Consulta de saldo");
+                    System.out.println("0 - Salir");
+                    System.out.print("Seleccione una opción: ");
+                    opcion = sc.nextInt();
+        
+                    switch (opcion) {
+                        case 1:
+                            System.out.print("Ingrese la cantidad a ingresar: ");
+                            double ingreso = sc.nextDouble();
+                            cuenta.depositar(ingreso);
+                            break;
+                        case 2:
+                            System.out.print("Ingrese la cantidad a retirar: ");
+                            double retiro = sc.nextDouble();
+                            cuenta.retirar(retiro);
+                            break;
+                        case 3:
+                            cuenta.consultarSaldo();
+                            break;
+                        case 0:
+                            System.out.println("Adiós");
+                            break;
+                        default:
+                            System.out.println("Opción inválida");
+                            break;
+                    }
+                } while (opcion != 0);
+            }
+        }
+        
+</code></pre>
+<h1>3.Realizar el taller #3 de PSeInt en Java</h1>
+<h1>Taller 6 Java</h1>
+<h2>Código de Java</h2>
+<h2>Código de Java</h2>
+<p>Enunciado:Realizar la siguiente figura por medio del ciclo Para</p>
+<pre>
+    <p>
+    *
+    **
+    ***
+    ****
+    *****
+    ******
+    *******
+    ********
+    *********
+    **********
+</p></pre>
+<pre><code>package javat3p1;
+    /**
+     *
+     * @author pablo
+     */
+    public class Javat3p1 {
+        private String concatenacion;
+        
+        public Javat3p1() {
+            concatenacion = "";
+        }
+        
+        public void imprimirTriangulo() {
+            for (int i = 1; i <= 10; i++) {
+                for (int j = 1; j <= i; j++) {
+                    if (i == 1) {
+                        System.out.print("*");
+                    } else {
+                        System.out.print("*" + concatenacion);
+                    }
+                }
+                System.out.println("");
+            }
+        }
+        
+        public static void main(String[] args) {
+            Javat3p1 triangulo = new Javat3p1();
+            triangulo.imprimirTriangulo();
+        }
+    }
+    
+   
+
+</code></pre>
+
+<h1>Taller 6 Java</h1>
+<h2>Código de Java</h2>
+<p>Enunciado:Realizar la siguiente figura por medio del ciclo Mientras - Hacer</p>
+<pre><code>package javat3p2;
+    /**
+     *
+     * @author pablo
+     */
+    public class Javat3p2 {
+        private int contador;
+        private int nEspacios;
+        private int cEspacios;
+        private int prueba;
+        private int cont;
+        private int avanzar;
+        private int cont2;
+        private String figura;
+        private String tab;
+    
+        public Javat3p2() {
+            contador = 9;
+            nEspacios = 10;
+            cEspacios = 1;
+            prueba = 0;
+            cont = 0;
+            avanzar = 1;
+            cont2 = 0;
+            figura = "*";
+            tab = "";
+        }
+    
+        public void construirFigura() {
+            System.out.println("           *");
+    
+            while (cont2 < 10) {
+                while (contador > 0) {
+                    if (prueba < avanzar) {
+                        figura += "*";
+                        prueba++;
+                    }
+                    tab += " ";
+                    contador--;
+                }
+                System.out.println(tab + figura);
+    
+                cont++;
+                avanzar++;
+                prueba = cont;
+                tab = "";
+                cont2++;
+                contador = 9 - cont2;
+            }
+        }
+    
+        public static void main(String[] args) {
+            Javat3p2 pun2 = new Javat3p2();
+            pun2.construirFigura();
+        }
+    }
+    
+
+
+</code></pre>
+
+<h1>Taller 6 Java</h1>
+<h2>Código de Java</h2>
+<p>Enunciado:Realizar la siguiente figura por medio del ciclo Repetir - Hasta Que</p>
+<pre><code>package javat3p3;
+    /**
+     *
+     * @author pablo
+     */
+    public class Javat3p3 {
+        
+        private int contador;
+        private int espacios;
+        private int c_espacios;
+        private String signo;
+        private String tab;
+        public static void main(String[] args) {
+            Javat3p3 pun3 = new Javat3p3();
+            pun3.ejecutar();
+        }
+        
+        public Javat3p3() {
+            contador = 0;
+            espacios = 10;
+            c_espacios = 1;
+            signo = "*";
+            tab = "";
+        }
+        
+        public void ejecutar() {
+            System.out.println("           *     ");
+            
+            for (int i = 1; i <= 10; i++) {
+                //primer ciclo
+                while (contador <= i) {
+                    signo += "*";
+                    contador++;
+                }
+                //Segundo ciclo
+                while (c_espacios <= espacios) {
+                    tab += " ";
+                    c_espacios++;
+                }
+                
+                System.out.println(tab + signo);
+                contador--;
+                espacios--;
+                c_espacios = 1;
+                tab = "";
+            }
+            
+            int i = 0;
+            while (i < 2) {
+                System.out.println("         *****");
+                i++;
+                if (i == 1) {
+                    System.out.println("        *******");
+                }
+            }
+        }
+    }
+    
+    
+    
+
+</code></pre>
+
+<h1>Taller 6 Java</h1>
+<h2>Código de Java</h2>
+<p>Enunciado:Se requiere un programa que pueda crear la tabla de multiplicar del número que el usuario indique por
+    medio del ciclo Para; esta debe ser impresa del 1 al 10. Ejemplo, si el usuario indica que desea crear la tabla
+    del 5, entonces el resultado debería ser el siguiente
+    .</p>
+<pre><code>package javat3p4;
+    /**
+     *
+     * @author pablo
+     */
+    import java.util.Scanner;
+    
+    public class Javat3p4 {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Ingrese el número para crear la tabla de multiplicar: ");
+            int numero = sc.nextInt();
+            sc.close();
+            
+            Tabla tabla = new Tabla(numero);
+            tabla.crearTabla();
+        }
+    }
+    
+    class Tabla {
+        private int numero;
+    
+        public Tabla(int numero) {
+            this.numero = numero;
+        }
+    
+        public void crearTabla() {
+            int resultado;
+            for (int i = 1; i <= 10; i++) {
+                resultado = i * numero;
+                System.out.println(i + "x" + numero + "=" + resultado);
+            }
+        }
+    }
+    
+
+
+
+</code></pre>
+
+<h1>Taller 6 Java</h1>
+<h2>Código de Java</h2>
+<p>Enunciado:Utilizando el ciclo que usted desee, crear un menú de ejecución infinita hasta que el usuario desee
+    terminar dicho ciclo.</p>
+<pre><code>package javat3p5;
+    /*
+     *
+     * @author pablo
+     */
+    import java.util.Scanner;
+    
+    public class Javat3p5 {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int opcion = 0;
+            String nombre = "";
+            
+            do {
+                System.out.println("Menu de Usuario");
+                System.out.println("1. Captura nombre");
+                System.out.println("2. Saludar persona");
+                System.out.println("3. Salir del sistema");
+                
+                opcion = scanner.nextInt();
+                
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Ingrese su nombre:");
+                        nombre = scanner.next();
+                        System.out.println("Nombre capturado: " + nombre);
+                        break;
+                    case 2:
+                        if (!nombre.equals("")) {
+                            System.out.println("Hola, " + nombre + "!");
+                        } else {
+                            System.out.println("Ingrese primero un nombre.");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Adios!");
+                        break;
+                    default:
+                        System.out.println("Opcion invalida, digite un numero entre 1 y 3");
+                }
+                
+                System.out.println("");
+            } while (opcion != 3);
+            
+            scanner.close();
+        }
+    }
+    
+
+
+</code></pre>
+
+<h1>Taller 6 Java</h1>
+<h2>Código de Java</h2>
+<p>Enunciado:Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar
+    contactos telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y
+    organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté
+    almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el sistema
+    debe terminar cuando el usuario así lo indique.</p>
+<pre><code>package javat3p6;
+    /**
+     *
+     * @author pablo
+     */
+    import java.util.ArrayList;
+    import java.util.Scanner;
+    
+    class Contacto {
+        private String nombreCompleto;
+        private String telefono;
+        private String organizacion;
+    
+        public Contacto(String nombreCompleto, String telefono, String organizacion) {
+            this.nombreCompleto = nombreCompleto;
+            this.telefono = telefono;
+            this.organizacion = organizacion;
+        }
+    
+        public String getNombreCompleto() {
+            return nombreCompleto;
+        }
+    
+        public void setNombreCompleto(String nombreCompleto) {
+            this.nombreCompleto = nombreCompleto;
+        }
+    
+        public String getTelefono() {
+            return telefono;
+        }
+    
+        public void setTelefono(String telefono) {
+            this.telefono = telefono;
+        }
+    
+        public String getOrganizacion() {
+            return organizacion;
+        }
+    
+        public void setOrganizacion(String organizacion) {
+            this.organizacion = organizacion;
+        }
+    }
+    
+    class Agenda {
+        private ArrayList<Contacto> contactos;
+    
+        public Agenda() {
+            contactos = new ArrayList<>();
+        }
+    
+        public void agregarContacto(Contacto contacto) {
+            if (contactos.size() < 3) {
+                boolean existe = false;
+                for (Contacto c : contactos) {
+                    if (c.getTelefono().equals(contacto.getTelefono())) {
+                        existe = true;
+                        break;
+                    }
+                }
+                if (!existe) {
+                    contactos.add(contacto);
+                    System.out.println("Contacto agregado.");
+                } else {
+                    System.out.println("El número ya está almacenado.");
+                }
+            } else {
+                System.out.println("No se pueden agregar más contactos.");
+            }
+        }
+    
+        public void buscarContacto(String telefono) {
+            for (Contacto c : contactos) {
+                if (c.getTelefono().equals(telefono)) {
+                    System.out.println("Nombre: " + c.getNombreCompleto());
+                    System.out.println("Teléfono: " + c.getTelefono());
+                    System.out.println("Organización: " + c.getOrganizacion());
+                    return;
+                }
+            }
+            System.out.println("No se encontró el contacto.");
+        }
+    
+        public void eliminarContacto(String telefono) {
+            for (int i = 0; i < contactos.size(); i++) {
+                if (contactos.get(i).getTelefono().equals(telefono)) {
+                    contactos.remove(i);
+                    System.out.println("Contacto eliminado.");
+                    return;
+                }
+            }
+            System.out.println("No se encontró el contacto.");
+        }
+    }
+    
+    public class Javat3p6 {
+        public static void main(String[] args) {
+            Agenda agenda = new Agenda();
+            Scanner scanner = new Scanner(System.in);
+            boolean terminar = false;
+    
+            while (!terminar) {
+                System.out.println("1. Agregar contacto");
+                System.out.println("2. Buscar contacto");
+                System.out.println("3. Eliminar contacto");
+                System.out.println("4. Terminar");
+                int opcion = scanner.nextInt();
+                scanner.nextLine();
+    
+                switch (opcion) {
+                    case 1:
+                        System.out.print("Nombre completo: ");
+                        String nombreCompleto = scanner.nextLine();
+                        System.out.print("Teléfono: ");
+                        String telefono = scanner.nextLine();
+                        System.out.print("Organización: ");
+                        String organizacion = scanner.nextLine();
+                        Contacto contacto = new Contacto(nombreCompleto, telefono, organizacion);
+                        agenda.agregarContacto(contacto);
+                        break;
+                    case 2:
+                        System.out.print("Teléfono: ");
+                        telefono = scanner.nextLine();
+                        agenda.buscarContacto(telefono);
+                        break;
+                    case 3:
+                        System.out.print("Teléfono: ");
+                        telefono = scanner.nextLine();
+                        agenda.eliminarContacto(telefono);
+                        break;
+                    case 4:
+                        terminar = true;
+                        break;
+                    default:
+                        System.out.println("Opción inválida.");
+                }
+            }
+            scanner.close();
+        }
+    }
+    
+
+
+</code></pre>
+
+<h1>Taller 6 Java</h1>
+<h2>Código de Java</h2>
+<p>Enunciado:El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio
+    y requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere
+    que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como son
+    nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de ingresar al parqueadero,
+    retirar del parqueadero y consultar si un vehículo se encuentra en el parqueadero. Recuerde que el sistema debe
+    terminar cuando el usuario así lo indique. Tenga en presente que el parqueadero solo puede almacenar máximo 5
+    vehículos.</p>
+<pre><code>package javat3p7;
+    /**
+     *
+     * @author pablo
+     */
+    import java.util.Scanner;
+    
+    class Parqueadero {
+        private String[] placas;
+        private String[] marcas;
+        private String[] nombres;
+        private String[] telefonos;
+        private int capacidad;
+        private int ocupacion;
+    
+        public Parqueadero(int capacidad) {
+            this.capacidad = capacidad;
+            this.ocupacion = 0;
+            this.placas = new String[capacidad];
+            this.marcas = new String[capacidad];
+            this.nombres = new String[capacidad];
+            this.telefonos = new String[capacidad];
+        }
+    
+        public boolean ingresarVehiculo(String placa, String marca, String nombre, String telefono) {
+            if (ocupacion < capacidad) {
+                placas[ocupacion] = placa;
+                marcas[ocupacion] = marca;
+                nombres[ocupacion] = nombre;
+                telefonos[ocupacion] = telefono;
+                ocupacion++;
+                return true;
+            } else {
+                return false;
+            }
+        }
+    
+        public boolean retirarVehiculo(String placa) {
+            for (int i = 0; i < ocupacion; i++) {
+                if (placas[i].equals(placa)) {
+                    for (int j = i; j < ocupacion - 1; j++) {
+                        placas[j] = placas[j + 1];
+                        marcas[j] = marcas[j + 1];
+                        nombres[j] = nombres[j + 1];
+                        telefonos[j] = telefonos[j + 1];
+                    }
+                    ocupacion--;
+                    return true;
+                }
+            }
+            return false;
+        }
+    
+        public boolean consultarVehiculo(String placa) {
+            for (int i = 0; i < ocupacion; i++) {
+                if (placas[i].equals(placa)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    
+    public class Javat3p7 {
+        public static void main(String[] args) {
+            Parqueadero parqueadero = new Parqueadero(5);
+            Scanner scanner = new Scanner(System.in);
+            boolean terminar = false;
+    
+            while (!terminar) {
+                System.out.println("Ingrese una opción:");
+                System.out.println("1. Ingresar vehículo al parqueadero");
+                System.out.println("2. Retirar vehículo del parqueadero");
+                System.out.println("3. Consultar si un vehículo se encuentra en el parqueadero");
+                System.out.println("4. Terminar");
+                int opcion = scanner.nextInt();
+                scanner.nextLine();
+    
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Ingrese la placa del vehículo:");
+                        String placa = scanner.nextLine();
+                        System.out.println("Ingrese la marca del vehículo:");
+                        String marca = scanner.nextLine();
+                        System.out.println("Ingrese el nombre completo del cliente:");
+                        String nombre = scanner.nextLine();
+                        System.out.println("Ingrese el número de teléfono del cliente:");
+                        String telefono = scanner.nextLine();
+                        boolean ingresado = parqueadero.ingresarVehiculo(placa, marca, nombre, telefono);
+                        if (ingresado) {
+                            System.out.println("Vehículo ingresado al parqueadero.");
+                        } else {
+                            System.out.println("No hay espacio disponible en el parqueadero.");
+                        }
+                        break;
+                    case 2:
+                        System.out.println("Ingrese la placa del vehículo a retirar:");
+                        placa = scanner.nextLine();
+                        boolean retirado = parqueadero.retirarVehiculo(placa);
+                        if (retirado) {
+                            System.out.println("Vehículo retirado del parqueadero.");
+                        } else {
+                            System.out.println("El vehículo no se encuentra en el parqueadero.");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Ingrese la placa del vehículo a consultar:");
+                        placa = scanner.nextLine();
+                        boolean encontrado = parqueadero.consultarVehiculo(placa);
+                        if (encontrado) {
+                             System.out.println("El vehículo se encuentra en el parqueadero.");
+                        } else {
+                            System.out.println("El vehículo no se encuentra en el parqueadero.");
+                               }
+                        break;
+                       case 4:
+                        terminar = true;
+                        break;
+                        default:
+                            System.out.println("Opción inválida.");
+                        break;
+                        }
+                        }
+                            scanner.close();
+                    }
+    }
+    
+    
+
+</code></pre>
+
+<h1>Taller 6 Java</h1>
+<h2>Código de Java</h2>
+<p>Enunciado:La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en
+    los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de
+    adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso al curso, consultar
+    usuarios que hayan presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde
+    que el sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela tiene capacidad
+    máxima de gestionar 8 usuarios en su totalidad.</p>
+<pre><code>package javat3p8;
+    /**
+     *
+     * @author pablo
+     */
+    import java.util.ArrayList;
+    import java.util.Scanner;
+    
+    class Usuario {
+        private String nombre;
+        private boolean aprobado;
+    
+        public Usuario(String nombre) {
+            this.nombre = nombre;
+            this.aprobado = false;
+        }
+    
+        public String getNombre() {
+            return nombre;
+        }
+    
+        public void setAprobado(boolean aprobado) {
+            this.aprobado = aprobado;
+        }
+    
+        public boolean isAprobado() {
+            return aprobado;
+        }
+    }
+    
+    class EscuelaAutomovilistica {
+        private ArrayList<Usuario> usuarios;
+        private final int capacidadMaxima = 8;
+    
+        public EscuelaAutomovilistica() {
+            usuarios = new ArrayList<Usuario>();
+        }
+    
+        public void registrarUsuario(Usuario usuario) {
+            if (usuarios.size() < capacidadMaxima) {
+                usuarios.add(usuario);
+                System.out.println("Usuario registrado exitosamente.");
+            } else {
+                System.out.println("Lo siento, la escuela ha alcanzado su capacidad máxima.");
+            }
+        }
+    
+        public void consultarUsuarios() {
+            for (Usuario usuario : usuarios) {
+                System.out.println(usuario.getNombre() + " - " + (usuario.isAprobado() ? "Aprobado" : "No Aprobado"));
+            }
+        }
+        public void aprobarUsuario(String nombre) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getNombre().equals(nombre)) {
+                usuario.setAprobado(true);
+                System.out.println("Usuario aprobado exitosamente.");
+                return;
+            }
+        }
+        System.out.println("No se encontró al usuario.");
+    }
+    }
+    
+    public class Javat3p8 {
+        public static void main(String[] args) {
+            EscuelaAutomovilistica escuela = new EscuelaAutomovilistica();
+            Scanner scanner = new Scanner(System.in);
+            boolean continuar = true;
+    
+            while (continuar) {
+                System.out.println("1. Registrar usuario");
+                System.out.println("2. Consultar usuarios");
+                System.out.println("3. Salir");
+                System.out.println("4. Aprobar usuario"); // Nueva opción
+                int opcion = scanner.nextInt();
+                scanner.nextLine();
+    
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Ingrese el nombre del usuario:");
+                        String nombre = scanner.nextLine();
+                        escuela.registrarUsuario(new Usuario(nombre));
+                        break;
+                    case 2:
+                        escuela.consultarUsuarios();
+                        break;
+                    case 3:
+                        continuar = false;
+                        break;
+                    default:
+                        System.out.println("Opción inválida.");
+                        break;
+                    case 4:
+        System.out.println("Ingrese el nombre del usuario a aprobar:");
+         nombre = scanner.nextLine();
+        escuela.aprobarUsuario(nombre);
+        break;
+                }
+            }
+    
+            scanner.close();
+        }
+    }
+    
+    <h1>4.Realizar el taller #4 de PSeInt en Java</h1>
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Crear un vector de tipo Entero con 5 posiciones, llenarlo con información solicitada al usuario.
+        Después de recoger toda la información, se requiere imprimir el índice de cada posición en el arreglo con su
+        valor de la siguiente manera:
+        [0] = 55
+        [1] = 99
+        [2] = 11
+        [3] = 56
+        [4] = 69</p>
+    <pre><code>package javat4p1;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        public class Javat4p1 {
+            private int[] vector;
+            private Scanner scanner;
+        
+            public Javat4p1(int size) {
+                vector = new int[size];
+                scanner = new Scanner(System.in);
+            }
+        
+            public void llenarVector() {
+                for (int i = 0; i < vector.length; i++) {
+                    System.out.print("Ingrese el valor para la posición " + i + ": ");
+                    vector[i] = scanner.nextInt();
+                }
+            }
+        
+            public void imprimirVector() {
+                for (int i = 0; i < vector.length; i++) {
+                    System.out.println("[" + i + "] = " + vector[i]);
+                }
+            }
+        
+            public static void main(String[] args) {
+                Javat4p1 miVector = new Javat4p1
+                (5);
+                miVector.llenarVector();
+                miVector.imprimirVector();
+            }
+        }
+    
+        
+    
+</code></pre>
+   
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Crear un arreglo de números enteros de 20 posiciones, el cual, debe ser llenado con números aleatorios
+        entre 1 y 100; después de haber llenado dicho arreglo, se debe volver a recorrer utilizando un ciclo diferente
+        al que se usó para llenarse e imprimir los números pares e impares. Ejemplo
+        Números pares: 2, 4, 6, 8, 10
+        Números impares: 1, 3, 5, 7, 9</p>
+    <pre><code>package javat4p2;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Random;
+        
+        public class Javat4p2 {
+            public static void main(String[] args) {
+                Javat4p2 arreglo = new Javat4p2(20);
+                arreglo.llenarNumerosAleatorios(1, 100);
+                arreglo.imprimirNumerosPares();
+                arreglo.imprimirNumerosImpares();
+            }
+            private int[] numeros;
+        
+            public Javat4p2(int size) {
+                numeros = new int[size];
+            }
+        
+            public void llenarNumerosAleatorios(int min, int max) {
+                Random rand = new Random();
+                for (int i = 0; i < numeros.length; i++) {
+                    numeros[i] = rand.nextInt(max - min + 1) + min;
+                }
+            }
+        
+            public void imprimirNumerosPares() {
+                System.out.print("Números pares: ");
+                for (int num : numeros) {
+                    if (num % 2 == 0) {
+                        System.out.print(num + " ");
+                    }
+                }
+                System.out.println();
+            }
+        
+            public void imprimirNumerosImpares() {
+                System.out.print("Números impares: ");
+                for (int num : numeros) {
+                    if (num % 2 != 0) {
+                        System.out.print(num + " ");
+                    }
+                }
+                System.out.println();
+            }
+        }
+        
+        
+    
+
+</code></pre>
+   
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Imprimir los números primos del 1 al 1000, el resultado debe ser buscado de forma matemática.</p>
+    <pre><code>package javat4p3;
+        /**
+         *
+         * @author pablo
+         */
+        public class Javat4p3 {
+            public static void main(String[] args) {
+                for (int i = 1; i <= 1000; i++) {
+                    if (esPrimo(i)) {
+                        System.out.println(i);
+                    }
+                }
+            }
+        
+            public static boolean esPrimo(int n) {
+                if (n <= 1) {
+                    return false;
+                }
+                for (int i = 2; i < n; i++) {
+                    if (n % i == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        
+	
+
+</code></pre>
+   
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Dada la siguiente matriz bidimensional, el cual debe de quemar en el código
+        01 02 03 04 05
+        06 07 08 09 10
+        11 12 13 14 15
+        16 17 18 19 20
+        Utilizando el conocimiento adquirido, a excepción de hacerlo de forma manual, imprima la siguiente matriz
+        bidimensional.
+        01 02 03 04 05
+        10 09 08 07 06
+        11 12 13 14 15
+        20 19 18 17 16</p>
+    <pre><code>package javat4p4;
+        /**
+         *
+         * @author pablo
+         */
+        public class Javat4p4 {
+            public static void main(String[] args) {
+                int[][] matriz = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20}};
+                for (int i = 0; i < matriz.length; i++) {
+                    if (i % 2 == 0) {
+                        for (int j = 0; j < matriz[i].length; j++) {
+                            System.out.print(matriz[i][j] + " ");
+                        }
+                    } else {
+                        for (int j = matriz[i].length - 1; j >= 0; j--) {
+                            System.out.print(matriz[i][j] + " ");
+                        }
+                    }
+                    System.out.println();
+                }
+            }
+        }
+        
+    
+	
+
+
+</code></pre>
+    
+    <h1>Taller 6 Java</h1>
+    <h2>Código de Java</h2>
+    <p>Enunciado:Se debe de imprimir el siguiente cuadro:</p>
+    <pre><code>package javat4p5;
+        /**
+         *
+         * @author pablo
+         */
+        import java.util.Scanner;
+        
+        class Matriz {
+            private int[][] matriz;
+        
+            public Matriz(int filas, int columnas) {
+                matriz = new int[filas][columnas];
+                for (int i = 0; i < filas; i++) {
+                    for (int j = 0; j < columnas; j++) {
+                        matriz[i][j] = i * j;
+                    }
+                }
+            }
+        
+            public int getValor(int fila, int columna) {
+                return matriz[fila][columna];
+            }
+        }
+        
+        public class Javat4p5 {
+            public static void main(String[] args) {
+                Matriz matriz = new Matriz(10, 10);
+        
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Por favor ingresa la fila y columna que deseas ver (separados por un espacio):");
+                int fila = scanner.nextInt();
+                int columna = scanner.nextInt();
+                System.out.println("El resultado en la fila " + fila + " y columna " + columna + " es: " + matriz.getValor(fila, columna));
+            }
+        }
+</code></pre>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+
+/* Estilos para el primer tema */
+.tema-1 li:nth-child(even) {
+    color: rgb(15, 18, 189);
+}
+
+/* Estilos para el segundo tema */
+.tema-2 li:nth-child(odd) {
+    color: rgb(214, 10, 10);
+}
+button[type="submit"] {
+    background-color: #160a86;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Estilos para aumentar el tamaño de la letra */
+#lista-frutas {
+    font-size: 20px;
+}
+#lista-frutas {
+    width: 50%;
+    margin: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  nav li {
+    margin: 0 10px;
+  }
+  nav a {
+    text-decoration: none;
+    color: #0d1110;
+  }
+.navegacion{
+    width: 100%;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    background-color: rgb(8, 131, 94);
+    color: rgb(22, 3, 92);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+button[type="reset"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button[type="reset"]:hover {
+    background-color: #45a049;
+}
+
+
+#home{
+    width: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 50px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: 5px;
+    background-color: #5a2d63;
+    color: white;
+    text-decoration: none;
+  }
+
+  #home:hover{
+    background-color:  whitesmoke;
+    color: #5a2d63;
+
+  }
+
+  #home:active{
+    background-color:  whitesmoke;
+    color: rgb(4, 124, 44);
+  }
+
+  .inicio{
+    width: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 50px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: 5px;
+    background-color: #5a2d63;
+    color: white;
+    text-decoration: none;
+  }
+
+  .inicio:hover{
+    background-color:  whitesmoke;
+    color: #5a2d63;
+
+  }
+
+  .inicio:active{
+    background-color:  whitesmoke;
+    color: rgb(4, 124, 44);
+  }
